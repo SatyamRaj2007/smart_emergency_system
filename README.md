@@ -1,6 +1,6 @@
 # Smart Emergency Response System (SERS)
 
-A comprehensive C++ console application simulating a real-world emergency management system for handling ambulance, fire, and police requests. This project demonstrates advanced use of data structures and algorithms in a practical, modular design.
+A comprehensive C++ console application simulating a real-world emergency response center for handling ambulance, fire, and police requests. This project demonstrates advanced use of core data structures and algorithms in a practical, modular design.
 
 ## Features
 
@@ -11,18 +11,19 @@ A comprehensive C++ console application simulating a real-world emergency manage
   - Queue (FIFO) for managing pending requests using IDs only.
   - Stack (LIFO) for processed requests to enable undo functionality.
 - **Algorithms**:
-  - Linear Search: Searches unsorted vector and displays comparison count.
-  - Binary Search: Requires sorted data by ID, shows efficiency comparison.
+  - Linear Search: Searches the unsorted vector and displays comparison count.
+  - Binary Search: Uses sorted data by ID to demonstrate efficiency.
   - Bubble Sort: Sorts requests by priority (High > Medium > Low).
   - Selection Sort: Sorts requests by ID or timestamp.
-- **Menu-Driven Interface**: User-friendly console menu with options for all operations.
+- **Menu-Driven Interface**: User-friendly console menu for all operations.
 - **Edge Case Handling**: Validates inputs, handles empty collections, and provides meaningful feedback.
-- **Formatted Output**: Tabular displays with proper alignment and color-coded messages.
+- **Formatted Output**: Displays tables with alignment and colored messages in supported terminals.
 
 ## Requirements
 
 - C++ Compiler (e.g., g++, clang++)
 - Standard C++ libraries: iostream, vector, queue, stack, string, iomanip
+- C++17 or later is recommended
 
 ## Compilation
 
@@ -30,6 +31,12 @@ To compile the program, use the following command in your terminal:
 
 ```bash
 g++ emrgency_system.cpp -o sers
+```
+
+On Windows, you can run the executable as:
+
+```powershell
+.\sers.exe
 ```
 
 ## Usage
@@ -40,7 +47,7 @@ Run the compiled executable:
 ./sers
 ```
 
-Follow the on-screen menu to interact with the system:
+Then follow the on-screen menu:
 1. Add Emergency Request
 2. View All Requests
 3. Process Next Request
@@ -60,11 +67,20 @@ Follow the on-screen menu to interact with the system:
 
 ## Example Usage
 
-```
+```text
 === Smart Emergency Response System (SERS) ===
 1. Add Emergency Request
-...
-Choice: 1
+2. View All Requests
+3. Process Next Request
+4. Undo Last Processed Request
+5. Search Request (Linear Search)
+6. Search Request (Binary Search)
+7. Sort Requests by Priority
+8. Sort Requests by ID
+9. Sort Requests by Timestamp
+10. Display Pending Queue
+11. Exit
+Choose an option: 1
 Select Type:
 1. Fire
 2. Medical
@@ -83,7 +99,7 @@ Select Zone:
 5. Central
 Choice: 5
 
-🚨 Emergency Request Added Successfully!
+ Emergency Request Added Successfully!
 ---------------------------------------
 ID        : 1
 Type      : Police
