@@ -4,8 +4,6 @@
 #include <stack>
 #include <string>
 #include <iomanip>
-#include <thread>
-#include <chrono>
 
 using namespace std;
 
@@ -80,6 +78,7 @@ public:
         for (int i = 0; i < 5; i++) {
             cout << i + 1 << ". " << zones[i] << endl;
         }
+        cout << "Choice: ";
         int z;
         cin >> z;
         while (z < 1 || z > 5) {
@@ -92,7 +91,14 @@ public:
         // Add to vector and queue (store ID only in queue)
         allRequests.push_back(e);
         pendingQueue.push(e.id);
-        cout << "\033[32mEmergency Added Successfully\033[0m\n";
+        cout << "\nEmergency Request Added Successfully!\n";
+        cout << "---------------------------------------\n";
+        cout << "ID        : " << e.id << endl;
+        cout << "Type      : " << e.type << endl;
+        cout << "Priority  : " << e.priority << endl;
+        cout << "Zone      : " << e.zone << endl;
+        cout << "Timestamp : " << e.timestamp << endl;
+        cout << "---------------------------------------\n";
     }
 
     // View all requests in tabular format
@@ -128,8 +134,7 @@ public:
         }
         processedStack.push(e);
         cout << "\033[34mProcessing Request ID: " << e.id << " - " << e.type << " in " << e.zone << "\033[0m\n";
-        // Simulate processing delay
-        this_thread::sleep_for(chrono::milliseconds(500));
+        // Simulate processing delay (removed for compatibility)
         cout << "\033[32mRequest processed successfully.\033[0m\n";
     }
 
